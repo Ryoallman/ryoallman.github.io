@@ -1,0 +1,104 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+$route['default_controller'] = 'welcome';
+$route['welcome'] = '404_override';
+$route['registrasi'] = 'login/regis';
+$route['verify'] = 'login/verify';
+$route['tentang-kami'] = 'welcome/about_me';
+$route['hubungi-kami'] = 'welcome/contact_me';
+$route['donasi'] = 'welcome/donate';
+$route['donasi/(:any)'] = 'welcome/donate_show/$1';
+$route['blog'] = 'welcome/artikel';
+$route['blog/(:any)'] = 'welcome/artikel_single/$1';
+$route['tag/(:any)'] = 'welcome/kategori/$1';
+$route['search'] = 'welcome/pencarian';
+$route['konfirmasi-donasi'] = 'welcome/donate_konfirm';
+$route['tagihan-donasi/(:any)'] = 'welcome/donate_invoice/$1';
+$route['user/logout'] = 'login/keluar';
+$route['user'] = '404_override';
+$route['user/index'] = '404_override';
+$route['user/dashboard'] = 'user/index';
+$route['user/galang-dana'] = 'user/galang_dana';
+$route['user/galang-dana/new'] = 'user/galang_dana_add';
+$route['user/galang-dana/edit/(:any)'] = 'user/galang_dana_edit/$1';
+$route['user/galang-dana/hapus/(:any)'] = 'user/galang_dana_del/$1';
+$route['user/galang-dana/tarik-dana/(:any)'] = 'user/galang_dana_tarik/$1';
+$route['user/penarikan/hapus/(:any)'] = 'user/penarikan_del/$1';
+$route['user/pengaturan/password'] = 'user/set_password';
+$route['user/pengaturan/profil'] = 'user/set_profil';
+$route['user/lupa-password'] = 'login/fopas';
+$route['user/change'] = 'login/ganti';
+
+$route['404_override'] = '';
+$route['admin'] = '404_override';
+$route['admin/index'] = '404_override';
+$route['admin/logout'] = 'auth/keluar';
+$route['admin/dashboard'] = 'admin/index';
+$route['admin/donasi/terima/(:any)'] = 'admin/donasi_masuk/$1';
+$route['admin/donasi/tolak/(:any)'] = 'admin/donasi_tolak/$1';
+$route['admin/galang-dana'] = 'admin/galdan';
+$route['admin/galang-dana/acc/(:any)'] = 'admin/galdan_acc/$1';
+$route['admin/galang-dana/selesai/(:any)'] = 'admin/galdan_end/$1';
+$route['admin/galang-dana/tolak/(:any)'] = 'admin/galdan_tolak/$1';
+$route['admin/galang-dana/alasan-penolakan/(:any)'] = 'admin/galdan_alasantolak/$1';
+$route['admin/pencairan/terima/(:any)'] = 'admin/wd_ok/$1';
+$route['admin/pencairan/tolak/(:any)'] = 'admin/wd_no/$1';
+$route['admin/pengguna/aktifkan/(:any)'] = 'admin/user_aktif/$1';
+$route['admin/pengguna/blokir/(:any)'] = 'admin/user_blok/$1';
+
+$route['admin/laporan/top-donatur'] = 'admin/laporan_top_donatur';
+$route['admin/laporan/top-donatur/print'] = 'admin/laporan_top_donatur_print';
+$route['admin/laporan/top-donatur/excel'] = 'admin/laporan_top_donatur_excel';
+$route['admin/laporan/donasi-masuk'] = 'admin/laporan_donasi_masuk';
+$route['admin/laporan/donasi-masuk/excel'] = 'admin/laporan_donasi_excel';
+$route['admin/laporan/donasi-masuk/excel/(:any)/(:any)'] = 'admin/laporan_donasi_excel_by/$1/$2';
+$route['admin/laporan/donasi-masuk/print/(:any)/(:any)'] = 'admin/laporan_donasi_print_by/$1/$2';
+$route['admin/laporan/galang-dana'] = 'admin/laporan_galang_dana';
+$route['admin/laporan/galang-dana/print'] = 'admin/laporan_galang_dana_print';
+$route['admin/laporan/galang-dana/print/(:num)'] = 'admin/laporan_galang_dana_print_by/$1';
+$route['admin/laporan/galang-dana/excel'] = 'admin/laporan_galang_dana_excel';
+$route['admin/laporan/galang-dana/excel/(:num)'] = 'admin/laporan_galang_dana_excel_by/$1';
+$route['admin/laporan/pengguna'] = 'admin/laporan_pengguna';
+$route['admin/laporan/pengguna/excel'] = 'admin/laporan_pengguna_excel';
+$route['admin/laporan/pengguna/excel/(:num)'] = 'admin/laporan_pengguna_excel_by/$1';
+$route['admin/laporan/pengguna/print'] = 'admin/laporan_pengguna_print';
+$route['admin/laporan/pengguna/print/(:num)'] = 'admin/laporan_pengguna_print_by/$1';
+$route['admin/laporan/pencairan'] = 'admin/laporan_pencairan';
+$route['admin/laporan/pencairan/excel'] = 'admin/laporan_pencairan_excel';
+$route['admin/laporan/pencairan/print'] = 'admin/laporan_pencairan_print';
+$route['admin/laporan/pencairan/excel/(:num)'] = 'admin/laporan_pencairan_excel_status/$1';
+$route['admin/laporan/pencairan/print/(:num)'] = 'admin/laporan_pencairan_print_status/$1';
+$route['admin/laporan/pencairan/excel/(:any)/(:any)'] = 'admin/laporan_pencairan_excel_date/$1/$2';
+$route['admin/laporan/pencairan/print/(:any)/(:any)'] = 'admin/laporan_pencairan_print_date/$1/$2';
+$route['admin/laporan/pencairan/excel/(:any)/(:any)/(:num)'] = 'admin/laporan_pencairan_excel_datestatus/$1/$2/$3';
+$route['admin/laporan/pencairan/print/(:any)/(:any)/(:num)'] = 'admin/laporan_pencairan_print_datestatus/$1/$2/$3';
+$route['admin/laporan/keuntungan'] = 'admin/laporan_laba';
+$route['admin/laporan/keuntungan/excel'] = 'admin/laporan_keuntungan_excel';
+$route['admin/laporan/keuntungan/print'] = 'admin/laporan_keuntungan_print';
+$route['admin/laporan/keuntungan/excel/(:num)'] = 'admin/laporan_keuntungan_excel_by/$1';
+$route['admin/laporan/keuntungan/print/(:num)'] = 'admin/laporan_keuntungan_print_by/$1';
+
+$route['admin/pengaturan/profil'] = 'admin/set_about';
+$route['admin/pengaturan/rekening'] = 'admin/set_rekening';
+$route['admin/pengaturan/rekening/new'] = 'admin/set_rekening_add';
+$route['admin/pengaturan/rekening/edit/(:num)'] = 'admin/set_rekening_edit/$1';
+$route['admin/pengaturan/rekening/hapus/(:num)'] = 'admin/set_rekening_del/$1';
+$route['admin/pengaturan/email'] = 'admin/set_email';
+
+$route['admin/pesan-masuk'] = 'admin/inbox';
+
+$route['admin/postingan/kategori'] = 'admin/pos_kategori';
+$route['admin/postingan/kategori/new'] = 'admin/pos_kategori_add';
+$route['admin/postingan/kategori/hapus/(:any)'] = 'admin/pos_kategori_del/$1';
+$route['admin/postingan/artikel'] = 'admin/pos_artikel';
+$route['admin/postingan/artikel/new'] = 'admin/pos_artikel_add';
+$route['admin/postingan/artikel/edit/(:any)'] = 'admin/pos_artikel_edit/$1';
+$route['admin/postingan/artikel/hapus/(:any)'] = 'admin/pos_artikel_del/$1';
+
+$route['admin/atur/profil'] = 'admin/atur_profil';
+$route['admin/atur/password'] = 'admin/atur_pass';
+
+$route['auth/lupa-password'] = 'auth/fopas';
+$route['auth/change'] = 'auth/ganti';
+$route['translate_uri_dashes'] = FALSE;
